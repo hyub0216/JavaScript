@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		Object.prototype.containKey = function(paramKey) {
+			for (key in this) {
+				if (key === paramKey) {
+					return true;
+				}
+			}
+			return false;
+		}
+
+		Object.prototype.getValue = function(paramKey) {
+
+			return this[paramKey];
+		}
+
+		var parameter = {
+			name : "hyubs",
+			age : "31",
+			job : "developer",
+			home : "Anyang"
+		};
+
+		if (parameter.containKey("name")) {
+			alert(parameter.getValue("name"));
+		}
+
+		for (name in parameter) {
+			if (parameter.hasOwnProperty(name)) {
+				console.log(name);
+			}
+		}
+	</script>
+</body>
+</html>

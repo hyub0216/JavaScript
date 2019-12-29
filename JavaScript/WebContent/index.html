@@ -5,9 +5,66 @@
 <title>Java Script 공부</title>
 </head>
 <body>
-	<script type="text/javascript">
-		alert("hello world");		
-		히히히히
-	</script>
+	<ul>
+		<script type="text/javascript">
+			var grades = {};
+			grades['a'] = 10;
+			grades['b'] = 15;
+			grades['c'] = 20;
+			grades['d'] = 25;
+			for ( var name in grades) {
+				document.write("<li>key : "+name+" value : "+grades[name]+"</li>");
+			}
+			//1. 객체안에는 객체와 함수도 올수 있다!.
+			//2. 객체 안에 객체 넣기! -- 함수도 일종의 값이라 저장이 가능하다.!! 개이덕!!!!
+			//3. console.log(a, b, c); , 로 계속 값을 부를수 있다.!!! 개이덕 2!!!!!!!!!!!!!
+			var hyubs = new Object();
+			hyubs.girlfriend ='손진아';
+			hyubs['payment'] ='300만원'
+			hyubs.hobbits = {};
+			hyubs['hobbits']['a'] = 'workout';
+			hyubs['hobbits']['b'] = 'yoga';
+			hyubs['action'] = function(){
+				alert("workout ! more harder!!");				
+			};
+			
+			hyubs['action'](); // hyubs.action(); 과 동일한 효과!!!
+			
+			
+			function cal (func , num) // 함수는 값이기 때문에 다른함수의 인자로 쓰일수 있다.!
+			{
+				return func(num);
+			}
+			
+			function decrease(num)
+			{
+				return num-1;
+			}
+			
+			function increase(num)
+			{
+				return num+1;
+			}
+			
+			alert(cal(increase, 1));
+			alert(cal(decrease, 1));
+			
+			
+			function cal(mode)
+			{
+				var funcs = {
+						'plus' : function (left, right ){return left+right ; },
+			            'minus' :function (left, right){return left-right ; }
+				}
+				return funcs[mode];
+			}
+			
+			alert(cal('plus')(1,2));
+			alert(cal('minus')(2,1));
+			
+			var numbers = [20,10,2,1,9,8,7,6,5,4,30];
+			numbers.sort();
+		</script>
+	</ul>
 </body>
 </html>

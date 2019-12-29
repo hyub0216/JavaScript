@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+var arr = new Array('a','b','c','d');
+
+Array.prototype.random = function (idx){//Java Scirpt 내장 객체에 함수를 추가하는방법;
+
+	return this[idx];// this로 해야지 함수를 호출한 변수를 가르친다.; 게이득!
+}
+
+alert(arr.random(0));
+
+
+</script>
+
+</body>
+</html>
